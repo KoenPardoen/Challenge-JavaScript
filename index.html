@@ -5,15 +5,46 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Stemwijzer</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stemwijzer.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
-<body onload="main()">
+<body onload="start()">
     <main>
-        <div class="content">
-
+        <div class="statements js-statements-stage" data-current="0" style="transform: translateX(0%);">
+            <div class="application__navigation">
+                <button class="btn btn--navigation btn--back" onclick="back()"><i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div class="statement js-statement" data-screen-id="2">
+                <div class="statement__wrapper">
+                    <h1 class="statement__title focused" id="title" tabindex="0"></h1>
+                    <p class="statement__description" id="statements"></p>
+                </div>
+                <details class="statement__opinions js-parties-opinions">
+                    <summary class="opinions__title">Wat vinden de partijen?</summary>
+                    <div class="opinions__wrapper">
+                        <div class="opinion opinion--agree">
+                            <h3 class="opinion__subtitle">Eens</h3>
+                            <details class="opinion__party">
+                                <summary class="party__title">PVV</summary>
+                                <p class="party__description">Geen toelichting gegeven</p>
+                            </details>
+                        </div>
+                    </div>
+                </details>
+                <div class="statement__actions">
+                    <button class="btn btn--big btn--black btn--answer js-button-answer" onclick="agree()" data-position="1">Eens</button>
+                    <button class="btn btn--big btn--black btn--answer js-button-answer" onclick="none()" data-position="0">Geen van beide</button>
+                    <button class="btn btn--big btn--black btn--answer btn--answer-last js-button-answer" onclick="disagree()" data-position="-1">Oneens</button>
+                    <button class="btn btn--big btn--skip" data-position="-2">
+                        <span class="btn__skip--desktop">Sla deze vraag over</span>
+                        <span class="btn__skip--mobile">Swipe om over te slaan</span>
+                    </button>
+                </div>
+            </div>
+        </div>
         </div>
     </main>
     <script src="javascript/script.js"></script>
@@ -21,11 +52,3 @@
 </body>
 
 </html>
-
-
-<!--         	<img class="headerimg" src="img/stemwijzer.png" alt="stemwijzer.png">
-        	<div class="statements">
-        		<h1 id="title"></h1>
-            	<h2 id="statements"></h2>
-            	<button onclick="start()">Start</button>
-        	</div> -->

@@ -1,16 +1,34 @@
-var title = document.getElementById("title");
-var statement = document.getElementById("statements");
+const title = document.getElementById("title");
+const statement = document.getElementById("statements");
+var a = 0
+var pro = 0
+var contra = 0
 
-
-function main() {
-	title.innerHTML = "StemWijzer Tweede Kamer 2017";
-	statement.innerHTML = "Test uw politieke voorkeur aan de hand van 30 stellingen";
-}
 
 
 function start() {
-	title.innerHTML = "";
-	statement.innerHTML = "";
-	title.innerHTML = subjects[0].title;
-	statement.innerHTML = subjects[0].statement;
+	title.innerHTML = subjects[a].title;
+	statement.innerHTML = subjects[a].statement;
+}
+
+function agree() {
+	a++
+	pro++
+	start()
+}
+
+function disagree() {
+	a++
+	contra--
+	start()
+}
+
+function none() {
+	a++
+	start()
+}
+
+function back() {
+	a --
+	start()
 }
