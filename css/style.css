@@ -1,0 +1,23 @@
+body{
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+main {
+	max-width: 1164px;
+	margin: 6em 6em 0 6em;
+	background-color:white;
+}
+
+.content {
+	padding: 30px;
+}
+
+.headerimg {
+	width: 300px;
+	height: auto;
+}
