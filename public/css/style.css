@@ -1,0 +1,11 @@
+#result {
+    display: none;
+}
+#statements {
+    background-color: #ffffff;
+    display: none;
+}
+
+#backButton {
+	padding: 10px;
+}
