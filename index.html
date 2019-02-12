@@ -25,7 +25,7 @@
                                 <div class="comment">
                                     <h2 class="comment__title">Test uw politieke voorkeur aan de hand van <span id="statementsAmount"></span> stellingen</h2>
                                     <p class="comment__description"><em> </em></p>
-                                    <button class="btn btn--big btn--black btn--start js-start" onclick="start()">Start</button>
+                                    <button class="btn btn--big btn--black btn--start js-start" onclick="getStatement()">Start</button>
                                     <a class="intro__xsable" href="xsable">Bekijk de toegankelijke versie voor mensen met een visuele beperking</a>
                                     <a class="intro__privacy" href="privacy.html" target="_blank">De StemWijzer maakt geen gebruik van cookies. Klik hier voor de volledige privacy statement</a>
                                 </div>
@@ -232,11 +232,11 @@
                         </div>
                     </div>
                 </details>
-                <div class="statement__actions">
-                    <button class="btn btn--big btn--black btn--answer js-button-answer" data-position="1" onclick="answer(1)">Eens</button>
-                    <button class="btn btn--big btn--black btn--answer js-button-answer" data-position="0" onclick="answer(3)">Geen van beide</button>
-                    <button class="btn btn--big btn--black btn--answer btn--answer-last js-button-answer btn--active" data-position="-1" onclick="answer(2)">Oneens</button>
-                    <button class="btn btn--big btn--skip" data-position="-2" onclick="answer(3)">
+                <div id="buttonDiv" class="statement__actions">
+                    <button id="eens" class="btn btn--big btn--black btn--answer js-button-answer" data-position="agree" >Eens</button>
+                    <button class="btn btn--big btn--black btn--answer js-button-answer" data-position="none">Geen van beide</button>
+                    <button class="btn btn--big btn--black btn--answer btn--answer-last js-button-answer" data-position="disagree">Oneens</button>
+                    <button class="btn btn--big btn--skip" data-position="skip">
                         <span class="btn__skip--desktop">Sla deze vraag over</span>
                         <span class="btn__skip--mobile">Swipe om over te slaan</span>
                     </button>
