@@ -3483,7 +3483,7 @@ var subjects = [{
 var parties = [{
     name: "VVD",
     secular: true,
-	size: 33,
+	  size: 33,
     long: "Volkspartij voor Vrijheid en Democratie"
   },
   {

@@ -10,6 +10,10 @@ var answers =[];
 const buttonDiv = document.getElementById("buttonDiv");
 var allButtons = buttonDiv.getElementsByClassName("btn");
 
+var first = document.getElementById("first")
+var second = document.getElementById("second")
+var thirth = document.getElementById("thirth")
+
 for (var i = 0; i < allButtons.length; i++) {
     allButtons[i].addEventListener("click", function() {
         answer(event.currentTarget.getAttribute("data-position"))
@@ -61,26 +65,21 @@ function back() {
 function getResult() {
 	statements.style.display = "none";
     result.style.display = "block";
-    var partyResult = [];
     for(var i = 0; i < parties.length; i++){
-        partyResult[parties[i].name] = 0;
+        parties[i].count = 0;
+        
+       for (let a = 0; a < answers.length; a++) {
+           if (answers[a] === subjects[a].parties[i].position) 
+           parties[i].count++;
+       }
+       parties[i].procent = Math.round(100 / answers.length * parties[i].count);
     }
-    
-   for (let index = 0; index < answers.length; index++) {
-        for (let indexparties = 0; indexparties < subjects[index].parties.length; indexparties++) {
-               var party = subjects[index].parties[indexparties];
-               //console.log(party);
-               if(answers[index] == party.position){
-                    partyResult[party.name]++;
-               }
-        }
-   }
-   for (let i = 0; i < subjects[1].parties.length; i++) {
-       console.log(partyResult[subjects[i].parties[1].name]);
-   }
 
-    
-   
-   console.log (parties[0].name);
-//    console.log(partyResult)
+    parties.sort(function(a, b) {
+        return b.procent - a.procent;
+    })
+    first.innerHTML = parties[0].procent;
+    second.innerHTML = parties[1].procent;
+    thirth.innerHTML = parties[2].procent;
 }
+
