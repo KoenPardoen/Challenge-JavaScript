@@ -3527,7 +3527,7 @@ var parties = [{
     size: 5
   },
   {
-    name: "Partij voor de Dieren",
+    name: "PartijvoordeDieren",
     secular: true,
     size: 33
   },
@@ -3543,12 +3543,12 @@ var parties = [{
     size: 3
   },
   {
-    name: "Forum voor Democratie",
+    name: "ForumvoorDemocratie",
     secular: true,
     size: 2
   },
   {
-    name: "Lokaal in de Kamer",
+    name: "LokaalindeKamer",
     secular: true,
     size: 0
   },
@@ -3563,12 +3563,12 @@ var parties = [{
     size: 0
   },
   {
-    name: "Nieuwe Wegen",
+    name: "NieuweWegen",
     secular: true,
     size: 0
   },
   {
-    name: "De Burger Beweging",
+    name: "DeBurgerBeweging",
     secular: true,
     size: 0
   },
@@ -3578,12 +3578,12 @@ var parties = [{
     size: 0
   },
   {
-    name: "Artikel 1",
+    name: "Artikel1",
     secular: true,
     size: 0
   },
   {
-    name: "Libertarische Partij",
+    name: "LibertarischePartij",
     secular: true,
     size: 0
   }

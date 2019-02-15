@@ -10,6 +10,9 @@ var answers =[];
 const buttonDiv = document.getElementById("buttonDiv");
 var allButtons = buttonDiv.getElementsByClassName("btn");
 
+var resultImg = document.getElementById("resultImg1")
+var resultImg = document.getElementById("resultImg2")
+var resultImg = document.getElementById("resultImg3")
 var first = document.getElementById("first")
 var second = document.getElementById("second")
 var thirth = document.getElementById("thirth")
@@ -81,5 +84,9 @@ function getResult() {
     first.innerHTML = parties[0].procent;
     second.innerHTML = parties[1].procent;
     thirth.innerHTML = parties[2].procent;
+
+    resultImg1.src = "resultLogos/" +parties[0].name.toLowerCase()+ ".png";
+    resultImg2.src = "resultLogos/" +parties[1].name.toLowerCase()+ ".png";
+    resultImg3.src = "resultLogos/" +parties[2].name.toLowerCase()+ ".png";
 }
 
