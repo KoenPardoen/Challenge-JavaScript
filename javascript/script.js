@@ -3,6 +3,7 @@ const statements = document.getElementById("statements");
 const result = document.getElementById("result");
 const title = document.getElementById("title");
 const statement = document.getElementById("statement");
+const valueState = document.getElementById("statementValue");
 
 var counter = 0;
 
@@ -53,20 +54,26 @@ function answer(value) {
     }
 
     if (counter == subjects.length -1) {
-        getResult();
+        heavierValue();
     } else {
         counter++
-        getResult()
+        getStatement();
     }
 }
 
 function back() {
 	counter--
-	getStatement()
+	getStatement();
+}
+
+function heavierValue() {
+	statements.style.display = "none";
+    valueState.style.display = "block";
 }
 
 function getResult() {
-	statements.style.display = "none";
+    statements.style.display = "none";
+    valueState.style.display = "none";
     result.style.display = "block";
     for(var i = 0; i < parties.length; i++){
         parties[i].count = 0;
