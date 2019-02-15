@@ -51,12 +51,12 @@ function answer(value) {
         case "skip":
             answers[counter] = "skip";
     }
-   // console.log(answers)
+
     if (counter == subjects.length -1) {
         getResult();
     } else {
-    	counter++
-        getStatement();
+        counter++
+        getResult()
     }
 }
 

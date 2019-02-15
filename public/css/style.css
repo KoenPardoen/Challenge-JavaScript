@@ -6,6 +6,10 @@
     display: none;
 }
 
+#statementValue {
+    display: none;
+}
+
 #backButton {
 	padding: 10px;
 }
