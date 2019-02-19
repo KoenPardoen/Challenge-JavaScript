@@ -73,11 +73,19 @@ function heavierValue() {
 
     subjects.forEach(function(subject, index) {
         var div = document.createElement("div");  
-        div.innerHTML = '<input class="form-check-input" type="checkbox" value="index" id="defaultCheck">'+'<label class="form-check-label" for="defaultCheck1">'
+        div.innerHTML = '<input class="form-check-input" onclick="window.addValue()" type="checkbox" value="index" data-position="' + index + '" id="defaultCheck' + index + '">'+'<label class="form-check-label" for="defaultCheck1">'
         + subjects[index].title +
       '</label>'
         listSubjects.appendChild(div);
     });
+
+     window.addValue = () => {
+
+    }
+
+
+
+
 }
 
 function getResult() {
