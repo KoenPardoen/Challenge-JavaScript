@@ -73,20 +73,23 @@ function heavierValue() {
 
     subjects.forEach(function(subject, index) {
         var div = document.createElement("div");  
-        div.innerHTML = '<input class="form-check-input" onclick="window.addValue()" type="checkbox" value="index" data-position="' + index + '" id="defaultCheck' + index + '">'+'<label class="form-check-label" for="defaultCheck1">'
-        + subjects[index].title +
+        div.innerHTML = '<input class="form-check-input" onclick="addValue('+index+')" type="checkbox" value="index" id="defaultCheck' + index + '">'+'<label class="form-check-label" for="defaultCheck1">'
+        + subject.title +
       '</label>'
         listSubjects.appendChild(div);
     });
-
-     window.addValue = () => {
-
-    }
-
-
-
-
 }
+
+
+function addValue(index) {
+    if ("heavy" in subjects[index]) {
+        delete subjects[index].heavy;
+    } else {
+        subjects[index].heavy = true;
+    }
+    console.log(subjects[index]);
+}
+ 
 
 function getResult() {
     statements.style.display = "none";
@@ -94,12 +97,20 @@ function getResult() {
     result.style.display = "block";
     for (var i = 0; i < parties.length; i++) {
         parties[i].count = 0;
-
+        let totalcount = 0;
         for (let a = 0; a < answers.length; a++) {
-            if (answers[a] === subjects[a].parties[i].position)
+            if (answers[a] === subjects[a].parties[i].position){
+                if("heavy" in subjects[a]){
+                    parties[i].count++
+                    totalcount++;
+                }
                 parties[i].count++;
+                totalcount++;
+            } else {
+                totalcount++;
+            }
         }
-        parties[i].procent = Math.round(100 / answers.length * parties[i].count);
+        parties[i].procent = Math.round(100 / totalcount * parties[i].count);
     }
 
     parties.sort(function (a, b) {
