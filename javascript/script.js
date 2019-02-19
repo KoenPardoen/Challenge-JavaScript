@@ -4,6 +4,7 @@ const result = document.getElementById("result");
 const title = document.getElementById("title");
 const statement = document.getElementById("statement");
 const valueState = document.getElementById("statementValue");
+const listSubjects = document.getElementById("listSubjects");
 
 var counter = 0;
 
