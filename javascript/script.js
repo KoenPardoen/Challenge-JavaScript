@@ -8,7 +8,7 @@ const listSubjects = document.getElementById("listSubjects");
 
 var counter = 0;
 
-var answers =[];
+var answers = [];
 const buttonDiv = document.getElementById("buttonDiv");
 var allButtons = buttonDiv.getElementsByClassName("btn");
 
@@ -20,7 +20,7 @@ var second = document.getElementById("second")
 var thirth = document.getElementById("thirth")
 
 for (var i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener("click", function() {
+    allButtons[i].addEventListener("click", function () {
         answer(event.currentTarget.getAttribute("data-position"))
     });
 }
@@ -54,7 +54,7 @@ function answer(value) {
             answers[counter] = "skip";
     }
 
-    if (counter == subjects.length -1) {
+    if (counter == subjects.length - 1) {
         heavierValue();
     } else {
         counter++
@@ -63,38 +63,45 @@ function answer(value) {
 }
 
 function back() {
-	counter--
-	getStatement();
+    counter--
+    getStatement();
 }
 
 function heavierValue() {
-	statements.style.display = "none";
+    statements.style.display = "none";
     valueState.style.display = "block";
+
+    subjects.forEach(function(subject, index) {
+        var div = document.createElement("div");  
+        div.innerHTML = '<input class="form-check-input" type="checkbox" value="index" id="defaultCheck">'+'<label class="form-check-label" for="defaultCheck1">'
+        + subjects[index].title +
+      '</label>'
+        listSubjects.appendChild(div);
+    });
 }
 
 function getResult() {
     statements.style.display = "none";
     valueState.style.display = "none";
     result.style.display = "block";
-    for(var i = 0; i < parties.length; i++){
+    for (var i = 0; i < parties.length; i++) {
         parties[i].count = 0;
-        
-       for (let a = 0; a < answers.length; a++) {
-           if (answers[a] === subjects[a].parties[i].position) 
-           parties[i].count++;
-       }
-       parties[i].procent = Math.round(100 / answers.length * parties[i].count);
+
+        for (let a = 0; a < answers.length; a++) {
+            if (answers[a] === subjects[a].parties[i].position)
+                parties[i].count++;
+        }
+        parties[i].procent = Math.round(100 / answers.length * parties[i].count);
     }
 
-    parties.sort(function(a, b) {
+    parties.sort(function (a, b) {
         return b.procent - a.procent;
     })
     first.innerHTML = parties[0].procent;
     second.innerHTML = parties[1].procent;
     thirth.innerHTML = parties[2].procent;
 
-    resultImg1.src = "resultLogos/" +parties[0].name.toLowerCase()+ ".png";
-    resultImg2.src = "resultLogos/" +parties[1].name.toLowerCase()+ ".png";
-    resultImg3.src = "resultLogos/" +parties[2].name.toLowerCase()+ ".png";
+    resultImg1.src = "resultLogos/" + parties[0].name.toLowerCase() + ".png";
+    resultImg2.src = "resultLogos/" + parties[1].name.toLowerCase() + ".png";
+    resultImg3.src = "resultLogos/" + parties[2].name.toLowerCase() + ".png";
 }
-
