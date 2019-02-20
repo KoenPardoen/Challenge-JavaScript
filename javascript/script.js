@@ -90,14 +90,22 @@ function addValue(index) {
     console.log(subjects[index]);
 }
  
-
+const filterSecular = document.getElementById("filterSecular");
 function secularParties() {
-console.log("seculier") 
-
+    if (filterSecular.checked) {
+        parties = parties.filter(function(parties) {
+            return parties.secular == true;
+        });
+    }
 }
 
+const filterLargerParties = document.getElementById("filterLargerParties");
 function largerParties() {
-console.log("larger parties")
+    if (filterLargerParties.checked) {
+        parties = parties.filter(function(parties) {
+            return parties.size > 0;
+        });
+    }
 }
 
 
