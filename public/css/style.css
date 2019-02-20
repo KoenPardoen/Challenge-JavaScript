@@ -13,3 +13,11 @@
 #backButton {
 	padding: 10px;
 }
+
+#flex {
+    display: flex;
+}
+
+#filter {
+    margin-left: 20px;
+}

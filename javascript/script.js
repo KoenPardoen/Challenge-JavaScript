@@ -91,6 +91,16 @@ function addValue(index) {
 }
  
 
+function secularParties() {
+console.log("seculier") 
+
+}
+
+function largerParties() {
+console.log("larger parties")
+}
+
+
 function getResult() {
     statements.style.display = "none";
     valueState.style.display = "none";
@@ -124,3 +134,4 @@ function getResult() {
     resultImg2.src = "resultLogos/" + parties[1].name.toLowerCase() + ".png";
     resultImg3.src = "resultLogos/" + parties[2].name.toLowerCase() + ".png";
 }
+
